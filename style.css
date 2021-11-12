@@ -1,0 +1,42 @@
+body::before {
+  display: block;
+  content: '';
+  height: 150px;
+}
+
+#container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#questions {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#questions button {
+  padding: 4px;
+  margin: 8px;
+}
+
+#desc {
+  font-size: 15px;
+}
+
+#h1 {
+  font-size: 80px;
+}
+
+button {
+  height: 6.5rem;
+  width: 12rem;
+  font-size: 60px;
+}
+
+.answer {
+  font-size: 80px;
+}
