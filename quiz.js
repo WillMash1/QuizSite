@@ -25,7 +25,7 @@ let currentQuestion = 0;
 class Quiz {
 
 
-    constructor(){
+    constructor(buttonOne){
 
 
     }
@@ -54,7 +54,7 @@ class Quiz {
      nextQuestion(currentQuestion);
      setAnswers(currentQuestion, answers, buttons);
     
-    buttonOne.addEventListener('click', () => {
+     buttonOne.addEventListener('click', () => {
         switch(currentQuestion){
             case 0: 
                 currentQuestion++;
