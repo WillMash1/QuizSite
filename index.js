@@ -28,81 +28,11 @@ let correctAnswers = 0;
 let wrongAnswers = 0;
 let currentQuestion = 0;
 
-const nextQuestion = function(currentQuestion){
-    question.textContent = questions[currentQuestion];
-}
-
-const setAnswers = function(currentQuestion, answers, buttons) {
-    let cq = currentQuestion;
-    const arr = answers[cq];
-    for(let i = 0;i<arr.length;i++){
-        buttons[i].innerHTML = ` <b>  ${arr[i]} </b> ` ;
-    }
-}
-
- nextQuestion(currentQuestion);
- setAnswers(currentQuestion, answers, buttons);
-
-buttonOne.addEventListener('click', () => {
-    switch(currentQuestion){
-        case 0: 
-            currentQuestion++;
-            setAnswers(currentQuestion, answers, buttons );
-            nextQuestion(currentQuestion);
-           // next(currentQuestion, answers, buttons );
-            break;
-        case 1: 
-        currentQuestion++;
-        setAnswers(currentQuestion, answers, buttons );
-        nextQuestion(currentQuestion);
-            break;
-        case 5: 
-        currentQuestion++;
-        setAnswers(currentQuestion, answers, buttons );
-        nextQuestion(currentQuestion);
-            break;
-        default:
-            console.log('false');
-    }
-} );
-
-buttonTwo.addEventListener('click', () => {
-    
-} );
-
-buttonThree.addEventListener('click', () => {
-    switch(currentQuestion){
-        case 3: 
-        currentQuestion++;
-            setAnswers(currentQuestion, answers, buttons );
-            nextQuestion(currentQuestion);
-            break;
-        case 6: 
-        currentQuestion++;
-            setAnswers(currentQuestion, answers, buttons );
-            nextQuestion(currentQuestion);
-            break;
-        default:
-            console.log('false');
-    }
-});
-
-buttonFour.addEventListener('click', () => {
-    switch(currentQuestion){
-        case 2: 
-        currentQuestion++;
-        setAnswers(currentQuestion, answers, buttons );
-        nextQuestion(currentQuestion);
-        break;
-        case 4: 
-        currentQuestion++;
-        setAnswers(currentQuestion, answers, buttons );
-        nextQuestion(currentQuestion);
-        break;
-        case 7: 
-            question.textContent = 'Congratulations You Win!';
-        break;
-            default:
-                console.log('false');
-    }
-} );
+//Clean up the quiz class
+//Rewrite the class so that the buttons for right and wrong answers are random
+//Set up the class so that I would only need to create two new arrays(questions/answers) in order to make a new quiz
+const quiz = new QuizClass(correctAnswers,wrongAnswers, currentQuestion, questions, answers, question,buttonOne,buttonTwo,buttonThree,buttonFour);
+//combine all of these into one function called startGame(currentQuestion,answers,buttons) with three parameters
+//quiz.nextQuestion(currentQuestion)
+quiz.setAnswers(currentQuestion,answers,buttons);
+quiz.startGame();
